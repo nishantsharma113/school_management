@@ -9,10 +9,11 @@ class NotificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: CustomAppBar(
-          title: "Home",
-          onNotificationTap: () {
-            context.go(AppRoutes.notification);
-          },
+          title: "Notification",
+          showtitle: true,
+          // onNotificationTap: () {
+          //   context.go(AppRoutes.notification);
+          // },
         ),
         bottomNavigationBar: CustomBottomNavBar(
           selectedIndex: 0,
@@ -81,9 +82,11 @@ class NoticeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(color: Color(0xffE6E6E6),
-      elevation: 3,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.grey[200],
+        borderRadius: BorderRadius.circular(15),
+      ),
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: Padding(
         padding: const EdgeInsets.all(15),
