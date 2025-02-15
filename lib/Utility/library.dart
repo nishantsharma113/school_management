@@ -1,0 +1,10 @@
+export 'package:flutter/material.dart';
+export 'package:flutter/services.dart';
+export 'package:velocity_x/velocity_x.dart';
+export 'package:school_management/Widgets/text_widget.dart';
+export 'package:go_router/go_router.dart';
+export 'package:school_management/main.dart';
+export 'package:flutter_svg/flutter_svg.dart';
+export 'package:school_management/constants/color_constants.dart';
+export 'package:school_management/constants/image_constants.dart';
+export 'dart:io';
