@@ -10,6 +10,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double elevation;
   final bool showLanguage;
   final bool showtitle;
+  final Function()? onNotificationTap;
 
   const CustomAppBar({
     super.key,
@@ -22,6 +23,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.elevation = 4.0,
     this.showLanguage = false,
     this.showtitle = false,
+    this.onNotificationTap,
   });
 
   @override
@@ -73,7 +75,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         IconButton(
           icon: Icon(Icons.notifications),
-          onPressed: () {},
+          onPressed: onNotificationTap,
         )
       ],
       flexibleSpace: Container(
