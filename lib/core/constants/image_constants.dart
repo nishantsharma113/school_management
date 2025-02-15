@@ -35,3 +35,4 @@ String syllabus = "${imagePath}syllabus.svg";
 
 String remark = "${imagePath}remark.svg";
 String payment = "${imagePath}payment.svg";
+String backIcon  = "${imagePath}back_icon.svg";

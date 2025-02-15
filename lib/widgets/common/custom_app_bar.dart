@@ -29,54 +29,63 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: 
-      showtitle?   Center(
-        child: TextWidget(
-                  title!,
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                ),
-      ):Row(
-        children: [
-          Container(
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(color: Colors.white, width: 1)),
-              child: Container(
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: Colors.white),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(50),
-                    child: user.toImage(width: 50, height: 50).p4(),
-                  )).p4()),
-          20.widthBox,
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            spacing: 5,
-            children: [
-              TextWidget(
-                "Rahul Jain",
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-              TextWidget(
-                "Class : 10 A Science",
-                color: Colors.white,
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-              ),
-            ],
-          )
-        ],
-      ),
+      leading: showtitle
+          ? IconButton(
+              onPressed: () {
+                context.go(AppRoutes.home);
+              },
+              icon: backIcon.toImage(color: Colors.white))
+          : null,
+      title: showtitle
+          ? TextWidget(
+              title!,
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+            )
+          : Row(
+              children: [
+                Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.white, width: 1)),
+                    child: Container(
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle, color: Colors.white),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(50),
+                          child: user.toImage(width: 50, height: 50).p4(),
+                        )).p4()),
+                20.widthBox,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: 5,
+                  children: [
+                    TextWidget(
+                      "Rahul Jain",
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    TextWidget(
+                      "Class : 10 A Science",
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ],
+                )
+              ],
+            ),
+      centerTitle: true,
       toolbarHeight: 120,
       actions: [
-        IconButton(
-          icon: Icon(Icons.notifications),
-          onPressed: onNotificationTap,
-        )
+        onNotificationTap != null
+            ? IconButton(
+                icon: Icon(Icons.notifications),
+                onPressed: onNotificationTap,
+              )
+            : SizedBox()
       ],
       flexibleSpace: Container(
         decoration: BoxDecoration(
