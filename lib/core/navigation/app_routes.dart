@@ -1,14 +1,13 @@
 // ignore_for_file: unused_element
 
-
-
+import 'package:school_management/features/home/view/home_view.dart';
 import 'package:school_management/features/login/view/login_view.dart';
 
 import '../library/library.dart';
 
 class AppRoutes {
   static const String login = '/login';
-  static const String hardwareOverview = '/hardwareOverview';
+  static const String home = '/home';
   static const String addItems = '/addItems';
   static const String leaderboard = '/leaderboard';
   static const String recommendation = '/recommendation';
@@ -20,7 +19,7 @@ class AppRoutes {
   static const String delegateSurvey = "/delegateSurvey";
   static const String profile = "/profile";
 
-  static Duration transitionDuration =  Duration(milliseconds: 500);
+  static Duration transitionDuration = Duration(milliseconds: 500);
 
   static final transaction = _slideTransition;
   static final GoRouter router = GoRouter(
@@ -35,7 +34,13 @@ class AppRoutes {
           transitionsBuilder: transaction,
         ),
       ),
-    
+      GoRoute(
+          path: home,
+          pageBuilder: (context, state) => CustomTransitionPage(
+                transitionDuration: transitionDuration,
+                child: HomeScreen(),
+                transitionsBuilder: transaction,
+              )),
     ],
   );
 
