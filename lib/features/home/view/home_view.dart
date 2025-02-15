@@ -10,6 +10,9 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
         appBar: CustomAppBar(
           title: "Home",
+          onNotificationTap: () {
+            context.go(AppRoutes.notification);
+          },
         ),
         bottomNavigationBar: CustomBottomNavBar(
           selectedIndex: 0,

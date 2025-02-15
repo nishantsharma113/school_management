@@ -2,13 +2,14 @@
 
 import 'package:school_management/features/home/view/home_view.dart';
 import 'package:school_management/features/login/view/login_view.dart';
+import 'package:school_management/features/notification/view/notification_view.dart';
 
 import '../library/library.dart';
 
 class AppRoutes {
   static const String login = '/login';
   static const String home = '/home';
-  static const String addItems = '/addItems';
+  static const String notification = '/notification';
   static const String leaderboard = '/leaderboard';
   static const String recommendation = '/recommendation';
   static const String leaderboardList = '/leaderboardList';
@@ -39,6 +40,13 @@ class AppRoutes {
           pageBuilder: (context, state) => CustomTransitionPage(
                 transitionDuration: transitionDuration,
                 child: HomeScreen(),
+                transitionsBuilder: transaction,
+              )),
+               GoRoute(
+          path: notification,
+          pageBuilder: (context, state) => CustomTransitionPage(
+                transitionDuration: transitionDuration,
+                child: NotificationScreen(),
                 transitionsBuilder: transaction,
               )),
     ],
