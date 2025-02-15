@@ -21,7 +21,17 @@ String assignmentActive = "${imagePath}assignment_active_icon.svg";
 String menu = "${imagePath}menu_icon.svg";
 String menuActive = "${imagePath}menu_active_icon.svg";
 
-
 String banner1 = "${imagePath}banner1.jpg";
 String banner2 = "${imagePath}banner2.jpg";
 
+String attendance = "${imagePath}attendance_icon.svg";
+String timeTable = "${imagePath}timetable_icon.svg";
+
+String examSchedule = "${imagePath}exam_icon.svg";
+String resultIcon = "${imagePath}result_icon.svg";
+String homeWork = "${imagePath}home_work.svg";
+String subjectTeacher = "${imagePath}subject_teacher.svg";
+String syllabus = "${imagePath}syllabus.svg";
+
+String remark = "${imagePath}remark.svg";
+String payment = "${imagePath}payment.svg";
