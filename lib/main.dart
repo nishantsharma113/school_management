@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:school_management/Utility/app_routes.dart';
+import 'package:school_management/core/navigation/app_routes.dart';
+import 'package:school_management/core/constants/app_constant.dart';
+import 'package:school_management/core/theme/app_theme.dart';
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 void main() {
@@ -14,27 +16,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
        
-        title: 'Edu Tracker',
+        title: AppConstant.appName,
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-            scaffoldBackgroundColor: Colors.white,
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-            useMaterial3: true,
-            
-            drawerTheme: DrawerThemeData(
-              backgroundColor: Colors.white,
-              shape: RoundedRectangleBorder(),
-              
-            ),
-            switchTheme: SwitchThemeData(
-              thumbColor: WidgetStateProperty.all(Colors.white),
-              trackColor: WidgetStateProperty.all(Colors.green),
-              
-            ),
-
-            appBarTheme: AppBarTheme(
-                iconTheme: IconThemeData(color: Colors.white),
-                surfaceTintColor: Colors.white, backgroundColor: Colors.white)),
+        theme: themeData,
         routerConfig: AppRoutes.router,
       );
   }
