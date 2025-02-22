@@ -11,6 +11,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool showLanguage;
   final bool showtitle;
   final Function()? onNotificationTap;
+  final Function()? onDrawerTap;
 
   const CustomAppBar({
     super.key,
@@ -24,6 +25,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.showLanguage = false,
     this.showtitle = false,
     this.onNotificationTap,
+    this.onDrawerTap,
   });
 
   @override
@@ -35,28 +37,22 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 context.go(AppRoutes.home);
               },
               icon: backIcon.toImage(color: Colors.white))
-          : null,
+          : GestureDetector(
+              onTap: onDrawerTap,
+              child: drawerIcon.toImage().pSymmetric(h: 14),
+            ),
       title: showtitle
-          ? TextWidget(
-              title!,
-              color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
+          ? Align(
+              alignment: Alignment.centerLeft,
+              child: TextWidget(
+                title!,
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+              ),
             )
           : Row(
               children: [
-                Container(
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(color: Colors.white, width: 1)),
-                    child: Container(
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle, color: Colors.white),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(50),
-                          child: user.toImage(width: 50, height: 50).p4(),
-                        )).p4()),
-                20.widthBox,
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   spacing: 5,
@@ -64,13 +60,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                     TextWidget(
                       "Rahul Jain",
                       color: Colors.white,
-                      fontSize: 16,
+                      fontSize: 20,
                       fontWeight: FontWeight.w500,
                     ),
                     TextWidget(
-                      "Class : 10 A Science",
+                      "Class 10 A Science",
                       color: Colors.white,
-                      fontSize: 12,
+                      fontSize: 14,
                       fontWeight: FontWeight.w400,
                     ),
                   ],
@@ -80,24 +76,31 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       toolbarHeight: 120,
       actions: [
-        onNotificationTap != null
-            ? IconButton(
-                icon: Icon(Icons.notifications),
-                onPressed: onNotificationTap,
-              )
-            : SizedBox()
+        showtitle
+            ? SizedBox()
+            : ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: user.toImage(width: 50, height: 50).p4(),
+              ).p4().onTap(
+                () {
+                  context.go(AppRoutes.profile);
+                },
+              ),
       ],
       flexibleSpace: Container(
+        width: context.screenWidth,
+        height: MediaQuery.of(context).size.height * 0.5,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(30),
-              bottomRight: Radius.circular(30),
-            ),
-            color: primaryColor),
+          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30)),
+          image: DecorationImage(
+            image: AssetImage(loginBgImg),
+            fit: BoxFit.cover,
+          ),
+        ),
       ),
     );
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(120);
+  Size get preferredSize => const Size.fromHeight(100);
 }

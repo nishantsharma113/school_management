@@ -1,0 +1,2 @@
+C:/Users/Abhijeet Sharma/OneDrive/Desktop/school_management/android/app/.cxx/Debug/y473y5k1/x86/CMakeFiles/edit_cache.dir
+C:/Users/Abhijeet Sharma/OneDrive/Desktop/school_management/android/app/.cxx/Debug/y473y5k1/x86/CMakeFiles/rebuild_cache.dir

@@ -1,5 +1,4 @@
 import 'package:school_management/core/library/library.dart';
-import 'package:school_management/widgets/common/bottom_bar.dart';
 import 'package:school_management/widgets/common/custom_app_bar.dart';
 
 class NotificationScreen extends StatelessWidget {
@@ -15,10 +14,7 @@ class NotificationScreen extends StatelessWidget {
           //   context.go(AppRoutes.notification);
           // },
         ),
-        bottomNavigationBar: CustomBottomNavBar(
-          selectedIndex: 0,
-          onItemTapped: (index) {},
-        ),
+       
         body: SizedBox(
           width: context.screenWidth,
           height: context.screenHeight,

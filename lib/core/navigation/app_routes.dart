@@ -1,17 +1,15 @@
 // ignore_for_file: unused_element
-
-import 'package:school_management/features/home/view/home_view.dart';
-import 'package:school_management/features/login/view/login_view.dart';
-import 'package:school_management/features/notification/view/notification_view.dart';
-
-import '../library/library.dart';
+import 'package:school_management/core/library/library.dart' ;
+import 'package:school_management/features/attendance/view/attendance_view.dart';
+import 'package:school_management/features/homework/view/homework_view.dart';
+import 'package:school_management/features/profile/view/profile_view.dart';
 
 class AppRoutes {
   static const String login = '/login';
   static const String home = '/home';
   static const String notification = '/notification';
-  static const String leaderboard = '/leaderboard';
-  static const String recommendation = '/recommendation';
+  static const String homework = '/homework';
+  static const String attendance = '/attendance';
   static const String leaderboardList = '/leaderboardList';
   static const String notificationList = "/notificationList";
   static const String webView = "/webView";
@@ -25,10 +23,18 @@ class AppRoutes {
   static final transaction = _slideTransition;
   static final GoRouter router = GoRouter(
     navigatorKey: navigatorKey,
-    initialLocation: '/login',
+    initialLocation: '/',
     routes: [
+       GoRoute(
+        path: '/',
+        pageBuilder: (context, state) => CustomTransitionPage(
+          transitionDuration: transitionDuration,
+          child: SplashScreen(),
+          transitionsBuilder: transaction,
+        ),
+      ),
       GoRoute(
-        path: "/login",
+        path: login,
         pageBuilder: (context, state) => CustomTransitionPage(
           transitionDuration: transitionDuration,
           child: LoginScreen(),
@@ -47,6 +53,27 @@ class AppRoutes {
           pageBuilder: (context, state) => CustomTransitionPage(
                 transitionDuration: transitionDuration,
                 child: NotificationScreen(),
+                transitionsBuilder: transaction,
+              )),
+               GoRoute(
+          path: homework,
+          pageBuilder: (context, state) => CustomTransitionPage(
+                transitionDuration: transitionDuration,
+                child: HomeWorkScreen(),
+                transitionsBuilder: transaction,
+              )),
+                  GoRoute(
+          path: attendance,
+          pageBuilder: (context, state) => CustomTransitionPage(
+                transitionDuration: transitionDuration,
+                child: AttendanceScreen(),
+                transitionsBuilder: transaction,
+              )),
+                GoRoute(
+          path: profile,
+          pageBuilder: (context, state) => CustomTransitionPage(
+                transitionDuration: transitionDuration,
+                child: ProfileScreen(),
                 transitionsBuilder: transaction,
               )),
     ],
