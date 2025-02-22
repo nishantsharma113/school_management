@@ -13,10 +13,8 @@ class TextWidget extends StatelessWidget {
   final TextStyle? textStyle;
 
   const TextWidget(
-       this.text,
-      {
+    this.text, {
     super.key,
-
     this.fontSize = 14.0,
     this.color = Colors.black,
     this.fontWeight = FontWeight.normal,
@@ -25,21 +23,18 @@ class TextWidget extends StatelessWidget {
     this.overflow = TextOverflow.ellipsis,
     this.fontStyle = FontStyle.normal,
     this.textStyle,
-
   });
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: textStyle ?? GoogleFonts.inter(
-        fontSize: fontSize,
-        color: color,
-        fontWeight: fontWeight,
-        fontStyle: fontStyle
-      ),
-      
-
+      style: textStyle ??
+          GoogleFonts.glory(
+              fontSize: fontSize,
+              color: color,
+              fontWeight: fontWeight,
+              fontStyle: fontStyle),
       textAlign: textAlign,
       maxLines: maxLines ?? 5,
       overflow: overflow,

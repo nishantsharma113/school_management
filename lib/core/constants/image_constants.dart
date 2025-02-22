@@ -1,8 +1,11 @@
 String imagePath = "assets/images/";
 
-String logo = "${imagePath}logo.png";
-String loginUpperImg = "${imagePath}2.0x/upper_pattern.png";
-String loginlowerImg = "${imagePath}2.0x/lower_pattern.png";
+String logo = "${imagePath}appicon.png";
+String splash = "${imagePath}splash.png";
+String loginBgImg = "${imagePath}bgImg.png";
+String drawerIcon = "${imagePath}drawerIcon.png";
+String profileImg = "${imagePath}profileImg.png";
+
 
 String userIcon = "${imagePath}user_icon.svg";
 String passwordIcon = "${imagePath}password.svg";
@@ -25,14 +28,25 @@ String banner1 = "${imagePath}banner1.jpg";
 String banner2 = "${imagePath}banner2.jpg";
 
 String attendance = "${imagePath}attendance_icon.svg";
-String timeTable = "${imagePath}timetable_icon.svg";
+String timeTable = "${imagePath}calendar_icon.svg";
 
-String examSchedule = "${imagePath}exam_icon.svg";
+String examSchedule = "${imagePath}classroom_icon.svg";
 String resultIcon = "${imagePath}result_icon.svg";
-String homeWork = "${imagePath}home_work.svg";
-String subjectTeacher = "${imagePath}subject_teacher.svg";
-String syllabus = "${imagePath}syllabus.svg";
+String homeWork = "${imagePath}homework_icon.svg";
+String subjectTeacher = "${imagePath}teacher_icon.svg";
+String syllabus = "${imagePath}syllabus_icon.svg";
 
-String remark = "${imagePath}remark.svg";
-String payment = "${imagePath}payment.svg";
+String remark = "${imagePath}remark_icon.png";
+String feeDeatils = "${imagePath}fee_icon.svg";
+String parentIcon = "${imagePath}parent_icon.svg";
+String circulerIcon = "${imagePath}user_pro_shift_icon.svg";
+String calenderIcon = "${imagePath}attendance_icon.svg";
+String logoutIcon = "${imagePath}logout_icon.svg";
+String syllabusIcon = "${imagePath}assignment_icon_parent.svg";
+String calenderIcon2 = "${imagePath}cal_icon.svg";
+
+
 String backIcon  = "${imagePath}back_icon.svg";
+
+String galleryIcon = "${imagePath}gallery.png";
+String locationIcon = "${imagePath}location.png";

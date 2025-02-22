@@ -1,54 +1,49 @@
-import 'dart:math';
-
 import 'package:school_management/core/library/library.dart';
 
 class Tile extends StatelessWidget {
   final String icon;
   final String label;
   final Color backgroundColor;
+  final VoidCallback? onPressed;
 
-  const Tile({
-    super.key,
-    required this.icon,
-    required this.label,
-    required this.backgroundColor,
-  });
+  const Tile(
+      {super.key,
+      required this.onPressed,
+      required this.icon,
+      required this.label,
+      this.backgroundColor = const Color(0xFF473F97)});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          width: 80,
-          height: 80,
-          decoration: BoxDecoration(
-            color: backgroundColor,
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              icon.toImage(color: Colors.white).wh(35, 35),
-            ],
+        InkWell(
+          onTap: onPressed,
+          child: Container(
+            width: 100,
+            height: 100,
+            decoration: BoxDecoration(
+              color: backgroundColor,
+              // shape: BoxShape.circle,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                icon.toImage().wh(50, 50),
+              ],
+            ),
           ),
         ),
         SizedBox(height: 8),
-        Text(
+        TextWidget(
           label,
           textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 14,
-            color: Colors.grey[700],
-            fontWeight: FontWeight.w500,
-          ),
+          fontSize: 16,
+          color: const Color.fromARGB(255, 97, 97, 97),
+          fontWeight: FontWeight.w500,
         ).h(40),
       ],
     ).w(context.screenWidth * 0.25);
-  }
-
-  Color getRandomColor() {
-    Random random = Random();
-    return Color.fromARGB(
-        255, random.nextInt(256), random.nextInt(256), random.nextInt(256));
   }
 }
