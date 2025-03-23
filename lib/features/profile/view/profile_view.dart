@@ -73,21 +73,25 @@ class ProfileScreen extends StatelessWidget {
             ],
           ),
           SizedBox(height: 20),
-          ProfileInfoRow(title: "Roll Number", value: profile.rollNumber),
-          ProfileInfoRow(title: "Date of Birth", value: profile.dob),
-          ProfileInfoRow(title: "Blood Group", value: profile.bloodGroup),
-          ProfileInfoRow(
-              title: "Emergency Contact", value: profile.emergencyContact),
-          ProfileInfoRow(
-              title: "Position in Class", value: profile.positionInClass),
-          ProfileInfoRow(title: "Father's Name", value: profile.fatherName),
-          ProfileInfoRow(title: "Mother's Name", value: profile.motherName),
-          CustomButton(
-            text: "Ask for Update",
-            onPressed: () {
-              context.go(AppRoutes.home);
-            },
-          ).w(context.screenWidth).pSymmetric(h: 30, v: 30),
+          Expanded(
+            child: ListView(children: [
+              ProfileInfoRow(title: "Roll Number", value: profile.rollNumber),
+            ProfileInfoRow(title: "Date of Birth", value: profile.dob),
+            ProfileInfoRow(title: "Blood Group", value: profile.bloodGroup),
+            ProfileInfoRow(
+                title: "Emergency Contact", value: profile.emergencyContact),
+            ProfileInfoRow(
+                title: "Position in Class", value: profile.positionInClass),
+            ProfileInfoRow(title: "Father's Name", value: profile.fatherName),
+            ProfileInfoRow(title: "Mother's Name", value: profile.motherName),
+            CustomButton(
+              text: "Ask for Update",
+              onPressed: () {
+                context.go(AppRoutes.home);
+              },
+            ).w(context.screenWidth).pSymmetric(h: 30, v: 30),
+            ],),
+          )
         ],
       ),
     );
