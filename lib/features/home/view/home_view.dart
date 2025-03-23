@@ -52,15 +52,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   title: "PTM",
                   icon: parentIcon,
                   onPressed: () {
-                    context.go(AppRoutes.home);
+                    context.go(AppRoutes.ptm);
                     _advancedDrawerController.hideDrawer();
                   }),
               tile(
                   context: context,
-                  title: "Circuler",
+                  title: "Circular",
                   icon: circulerIcon,
                   onPressed: () {
-                    context.go(AppRoutes.profile);
+                    context.go(AppRoutes.circular);
                     _advancedDrawerController.hideDrawer();
                   }),
               tile(
@@ -68,6 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   title: "Holiday & Event Calendar",
                   icon: calenderIcon2,
                   onPressed: () {
+                    context.go(AppRoutes.holidayCalendar);
                     _advancedDrawerController.hideDrawer();
                   }),
               tile(
@@ -204,31 +205,52 @@ class _HomeScreenState extends State<HomeScreen> {
                             Tile(
                                 icon: subjectTeacher,
                                 label: "Subject Teacher",
-                                onPressed: () {}),
+                                onPressed: () {
+                                  context.go(AppRoutes.teacher);
+                                }),
                             Tile(
                                 icon: timeTable,
                                 label: "Class Time Table",
-                                onPressed: () {}),
+                                onPressed: () {
+                                  context.go(AppRoutes.timetable);
+                                }),
                             Tile(
                                 icon: examSchedule,
                                 label: "Exam Schedule",
-                                onPressed: () {}),
+                                onPressed: () {
+                                  context.go(AppRoutes.examSchedule);
+                                }),
                             Tile(
                                 icon: resultIcon,
                                 label: "Exam Result",
-                                onPressed: () {}),
+                                onPressed: () {
+                                  context.go(AppRoutes.examResult);
+                                }),
                             Tile(
                                 icon: syllabus,
                                 label: "Syllabus",
-                                onPressed: () {}),
+                                onPressed: () {
+                                  context.go(AppRoutes.syllabus);
+                                }),
                             Tile(
                                 icon: remark,
                                 label: "Remarks",
-                                onPressed: () {}),
+                                onPressed: () {
+                                  context.go(AppRoutes.remark);
+                                }),
+                            // Tile(
+                            //     icon: "assets/icons/profile.png",
+                            //     label: "Student Profile",
+                            //     onPressed: () {
+                            //       context.go(AppRoutes.studentProfile);
+                            //     }),
                             Tile(
                                 icon: feeDeatils,
                                 label: "Fees Detail",
-                                onPressed: () {}),
+                                onPressed: () {
+                                  context.go(AppRoutes.feesDetails);
+                                }),
+                           
                           ],
                         ),
                         Wrap(
@@ -240,22 +262,27 @@ class _HomeScreenState extends State<HomeScreen> {
                                 icon: galleryIcon,
                                 label: "Gallery",
                                 onPressed: () {
-                                  context.go(AppRoutes.homework);
+                                  context.go(AppRoutes.gallery);
                                 }),
                             Tile(
                                 icon: locationIcon,
                                 label: "Map",
                                 onPressed: () {
-                                  context.go(AppRoutes.attendance);
+                                  context.go(AppRoutes.schoolMap);
                                 }),
+                            
                             Tile(
-                                icon: circulerIcon,
+                                icon: calenderIcon,
                                 label: "School Timing",
-                                onPressed: () {}),
+                                onPressed: () {
+                                  context.go(AppRoutes.schoolTiming);
+                                }),
                             Tile(
                                 icon: syllabus,
                                 label: "School Desk",
-                                onPressed: () {}),
+                                onPressed: () {
+                                  context.go(AppRoutes.schoolDesk);
+                                }),
                           ],
                         ),
                       ],

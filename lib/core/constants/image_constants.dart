@@ -50,3 +50,4 @@ String backIcon  = "${imagePath}back_icon.svg";
 
 String galleryIcon = "${imagePath}gallery.png";
 String locationIcon = "${imagePath}location.png";
+String schoolDeskIcon = "${imagePath}assignment_icon.svg";
